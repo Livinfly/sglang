@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sglang-portable-benchmark"
+version = "0.1.0"
+requires-python = ">=3.12"
+
+[project.entry-points."sglang.multimodal_gen.plugins"]
+sglang_bench = "sglang_bench:register"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sglang_bench*"]

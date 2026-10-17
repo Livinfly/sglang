@@ -1,0 +1,28 @@
+{
+  "name": "fastwan21_14b",
+  "adapter": "fastwan21_14b",
+  "model_id": "FastVideo/FastWan2.1-T2V-14B-Diffusers",
+  "sampling": {
+    "height": 720,
+    "width": 1280,
+    "num_frames": 81,
+    "fps": 16,
+    "seed": 1024,
+    "guidance_scale": 1.0,
+    "num_inference_steps": 3,
+    "batch_cfg": false
+  },
+  "prompt": "A woman sits at a wooden table by the window in a cozy café. She reaches out with her right hand, picks up the white coffee cup from the saucer, and gently brings it to her lips to take a sip. After drinking, she places the cup back on the table and looks out the window, enjoying the peaceful atmosphere.",
+  "negative_prompt": "",
+  "contract": {
+    "dmd_denoising_steps": [
+      1000,
+      757,
+      522
+    ],
+    "flow_shift": 8.0
+  },
+  "vsa_sparsity": 0.9,
+  "server": {},
+  "execution_note": "与 FastVideo 对齐：720×1280×81、16 FPS、seed1024、CFG1、3 次 DMD forward [1000,757,522]、shift8；Wan 原生 VSA (4,4,4)/64 tokens，1440 块、topk144。原生 auto 部署策略、offload 和 compile 默认保留，实际配置逐卡数记录；不生成音频。插件只补充14B注册和计时/校验。 环境兼容例外：vsa==0.0.4 官方 wheel 要求 GLIBC_2.32，本机重编官方扩展（FastVideo f8bfc760 / ThunderKittens 6c27e28c），保留0.0.4原生Python实现；使用隔离CUDA13.0构建工具，源码/二进制hash见effective_rank*.json的vsa_dependency_build。 VSA兼容修正仅将PyTorch版本门槛从字符串比较改为数字比较（2.14>=2.4）；CUDA13构建显式使用sm_90a目标。"
+}

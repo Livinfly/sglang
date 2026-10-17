@@ -1,0 +1,9 @@
+{
+  "repo": "kevin-mi/FastH3-8step-V2-overlay",
+  "revision": "308e2dd627218c40ae759a93745429800771a625",
+  "files": {
+    "_overlay/materialize.py": "c8d7dd538ceb768f98ba5410ec4bc12de3ae1ed3d43977755b68aab0999ec6af",
+    "_overlay/overlay_manifest.json": "19861d97749c50233caefd341747e173036717277682e09e001644828478c93a",
+    "model_index.json": "7f469cede323718c1cb253b0fdb3eca3511087920a28522385acd68de989a48f"
+  }
+}
