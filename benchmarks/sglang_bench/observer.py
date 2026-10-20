@@ -106,6 +106,7 @@ class Observer:
                     self.info,
                 )
                 local = dict(
+                    sparse_attention=self.timer.sparse_result() if mode == "dit" and getattr(self, "plan", {}).get("sparse_attention_timing") else None,
                     rank=self.worker.rank,
                     response_e2e_s=command["response_e2e_s"]
                     if self.worker.rank == 0
